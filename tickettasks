@@ -1,0 +1,2 @@
+#! /bin/sh
+ticketsummary | grep -v 'tv' | grep -v 'movies' | grep -v 'video games' | grep -v 'literature'

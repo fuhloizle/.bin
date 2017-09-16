@@ -1,0 +1,19 @@
+#!/bin/bash
+	if [ -f ${HOME}/.tickets/current ]; then
+		c=$(( $(cat ${HOME}/.tickets/current) + 1))
+	else
+		c=1
+	fi
+	echo ${c} > ${HOME}/.tickets/current
+	f=${HOME}/.tickets/${c}
+
+	echo -n "ticket: " >> ${f}
+	echo ${c} >> ${f}
+	echo -n "responsible: " >> ${f}
+	echo ${USER}"@"$(hostname) >> ${f}
+	echo "status: open" >> ${f}
+	echo "title: ?" >> ${f}
+	echo "----" >> ${f}
+	echo "Describe the problem here" >> ${f}
+
+	echo ${c}

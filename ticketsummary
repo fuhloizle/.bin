@@ -1,0 +1,1 @@
+for i in $(opentickets) ; do echo -n "$i " ; head -n 4 $i | tail -n 1 ; done;
